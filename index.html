@@ -1,0 +1,13 @@
+---
+layout: home
+title: İkinci El Eşyalar
+---
+
+<h1>Second-Hand Goods for Sale</h1>
+<p>Number of items: {{ site.items | size }}</p>
+<ul>
+  {% for item in site.items %}
+    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+  {% endfor %}
+</ul>
+{{ site.items | inspect }}

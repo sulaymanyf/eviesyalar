@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+<div class="product-image-gallery">
+    <div class="image-container">
+        <img id="main-image" src="{{ page.image }}" alt="Product Image" />
+        {% if page.sold %}
+            <div class="sold-overlay">Satıldı</div>
+        {% endif %}
+    </div>
+    <div class="thumbnails">
+        <img class="thumbnail" src="path/to/image1.jpg" alt="Thumbnail 1" onclick="changeImage(this.src)" />
+        <img class="thumbnail" src="path/to/image2.jpg" alt="Thumbnail 2" onclick="changeImage(this.src)" />
+        <img class="thumbnail" src="path/to/image3.jpg" alt="Thumbnail 3" onclick="changeImage(this.src)" />
+        <!-- Add more thumbnails as needed -->
+    </div>
+</div>
+<style>
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.sold-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 0, 0, 0.5); /* Red background with transparency */
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+</style>
+<script>
+function changeImage(src) {
+    document.getElementById('main-image').src = src;
+}
+</script>
+<p>{{ page.description }}</p>
+<p>Price: {{ page.price }}</p>
+<a href="/">Back to Home</a>
