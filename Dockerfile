@@ -13,11 +13,11 @@ COPY . .
 # 安装指定版本的 Bundler 和 Jekyll
 RUN gem install bundler -v 2.4.19 && gem install jekyll -v 4.3.4
 
-# 安装项目依赖
-RUN bundle install
+# 清理 Bundler 缓存并安装项目依赖
+RUN bundle clean --force && bundle install
 
 # 构建 Jekyll 静态文件
-RUN jekyll build
+RUN bundle exec jekyll build
 
 # 使用 Nginx 作为 Web 服务器
 FROM nginx:alpine
