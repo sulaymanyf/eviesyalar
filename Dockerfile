@@ -10,11 +10,14 @@ WORKDIR /app
 # 复制项目文件到容器
 COPY . .
 
+# 删除旧的 Gemfile.lock 文件，并重新生成
+RUN rm -f Gemfile.lock
+
 # 安装指定版本的 Bundler 和 Jekyll
 RUN gem install bundler -v 2.4.19 && gem install jekyll -v 4.3.4
 
-# 清理 Bundler 缓存并安装项目依赖
-RUN bundle clean --force && bundle install
+# 安装项目依赖，增加重试次数和详细输出
+RUN bundle install --retry 3 --verbose
 
 # 构建 Jekyll 静态文件
 RUN bundle exec jekyll build
