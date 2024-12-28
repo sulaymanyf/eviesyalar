@@ -10,8 +10,8 @@ WORKDIR /app
 # 复制项目文件到容器
 COPY . .
 
-# 安装特定版本的 Jekyll 和 Bundler
-RUN gem install bundler jekyll -v 4.3.4
+# 安装指定版本的 Bundler 和 Jekyll
+RUN gem install bundler -v 2.4.19 && gem install jekyll -v 4.3.4
 
 # 安装项目依赖
 RUN bundle install
