@@ -2,7 +2,7 @@
 layout: item
 title: Airfryer
 description: Sağlıklı kızartma için airfryer
-image: [image_url]
+image: /images/airfryer/image1.jpg
 price: 800TL
 condition: Yeni
 category: Mutfak

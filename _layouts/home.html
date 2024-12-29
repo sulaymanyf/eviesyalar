@@ -25,7 +25,7 @@ layout: default
     {% for item in items %}
     <div class="item-card" data-category="{{ item.category }}">
       <div class="image-container">
-        <img src="{{ item.image }}" alt="{{ item.title }}" class="item-image">
+        <img src="{{ '/assets/images/' | append: item.title | downcase | replace: ' ', '-' | append: '/image1.jpg' }}" alt="{{ item.title }}" class="item-image">
         {% if item.status == 'sold' %}
           <div class="sold-overlay">SATILDI</div>
         {% endif %}

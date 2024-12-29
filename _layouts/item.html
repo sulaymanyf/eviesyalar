@@ -5,15 +5,15 @@ layout: default
 <h1>{{ page.title }}</h1>
 <div class="product-image-gallery">
     <div class="image-container">
-        <img id="main-image" src="{{ page.image }}" alt="Product Image" />
+        <img id="main-image" src="/images/{{ page.title | downcase | replace: ' ', '-' }}/image1.jpg" alt="{{ page.title }}" />
         {% if page.sold %}
             <div class="sold-overlay">Satıldı</div>
         {% endif %}
     </div>
     <div class="thumbnails">
-        <img class="thumbnail" src="path/to/image1.jpg" alt="Thumbnail 1" onclick="changeImage(this.src)" />
-        <img class="thumbnail" src="path/to/image2.jpg" alt="Thumbnail 2" onclick="changeImage(this.src)" />
-        <img class="thumbnail" src="path/to/image3.jpg" alt="Thumbnail 3" onclick="changeImage(this.src)" />
+        <img class="thumbnail" src="/images/{{ page.title | downcase | replace: ' ', '-' }}/image1.jpg" alt="{{ page.title }}" onclick="changeImage(this.src)" />
+        <img class="thumbnail" src="/images/{{ page.title | downcase | replace: ' ', '-' }}/image2.jpg" alt="{{ page.title }}" onclick="changeImage(this.src)" />
+        <img class="thumbnail" src="/images/{{ page.title | downcase | replace: ' ', '-' }}/image3.jpg" alt="{{ page.title }}" onclick="changeImage(this.src)" />
         <!-- Add more thumbnails as needed -->
     </div>
 </div>
