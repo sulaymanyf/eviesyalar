@@ -20,6 +20,4 @@ FROM nginx:alpine
 
 # 只复制构建结果
 COPY --from=builder /app/_site /usr/share/nginx/html
-
-EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

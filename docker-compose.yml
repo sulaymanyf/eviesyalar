@@ -5,15 +5,15 @@ services:
     build: .
     user: root
     ports:
-      - 8080
-    networks:
-      - dokploy-network
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.app-evi.rule=Host(`evinesyalar.neyhub.com`)
-      - traefik.http.routers.app-evi.entrypoints=websecure
-      - traefik.http.routers.app-evi.tls.certResolver=letsencrypt
-      - traefik.http.services.app-evi.loadbalancer.server.port=8080
-networks:
-  dokploy-network:
-    external: true
+      - 8081
+#    networks:
+#      - dokploy-network
+#    labels:
+#      - traefik.enable=true
+#      - traefik.http.routers.app-evi.rule=Host(`evinesyalar.neyhub.com`)
+#      - traefik.http.routers.app-evi.entrypoints=websecure
+#      - traefik.http.routers.app-evi.tls.certResolver=letsencrypt
+#      - traefik.http.services.app-evi.loadbalancer.server.port=8080
+#networks:
+#  dokploy-network:
+#    external: true
