@@ -1,23 +1,23 @@
 version: '3.8'
 
-services:
-  web-evinesyalar:
-    build: .
-    user: root
-    ports:
-      - 8091
-    volumes:
-      - ./evi:/usr/share/nginx/html
-    networks:
-      - dokploy-network
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.web-evinesyalar.rule=Host(`evinesyalar.neyhub.com/`)
-      - traefik.http.routers.web-evinesyalar.entrypoints=websecure
-      - traefik.http.routers.web-evinesyalar.tls.certResolver=letsencrypt
-      - traefik.http.services.web-evinesyalar.loadbalancer.server.port=8091
-
-
-networks:
-  dokploy-network:
-    external: true
+#services:
+#  web-evinesyalar:
+#    build: .
+#    user: root
+#    ports:
+#      - 8091
+#    volumes:
+#      - ./evi:/usr/share/nginx/html
+#    networks:
+#      - dokploy-network
+#    labels:
+#      - traefik.enable=true
+#      - traefik.http.routers.web-evinesyalar.rule=Host(`evinesyalar.neyhub.com/`)
+#      - traefik.http.routers.web-evinesyalar.entrypoints=websecure
+#      - traefik.http.routers.web-evinesyalar.tls.certResolver=letsencrypt
+#      - traefik.http.services.web-evinesyalar.loadbalancer.server.port=8091
+#
+#
+#networks:
+#  dokploy-network:
+#    external: true
