@@ -26,4 +26,7 @@ RUN bundle exec jekyll build
 FROM nginx:alpine
 
 # 将 Jekyll 构建的静态文件复制到 Nginx 默认目录
-COPY --from=0 /app/_site /usr/share/nginx/html
+COPY _site /usr/share/nginx/html
+
+# 暴露端口 80（Nginx 默认端口）
+EXPOSE 443
