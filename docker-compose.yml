@@ -10,9 +10,9 @@ services:
     networks:
       - dokploy-network
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.web-evinesyalar.rule=Host(`evinesyalar.neyhub.com/`)"
-      - "traefik.http.routers.web-evinesyalar.entrypoints=websecure"
+      - traefik.enable=true
+      - traefik.http.routers.web-evinesyalar.rule=Host(`evinesyalar.neyhub.com/`)
+      - traefik.http.routers.web-evinesyalar.entrypoints=websecure
       - traefik.http.routers.web-evinesyalar.tls.certResolver=letsencrypt
       - traefik.http.services.web-evinesyalar.loadbalancer.server.port=8091
 networks:
