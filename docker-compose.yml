@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   web-evinesyalar:
     build: .
@@ -16,7 +15,6 @@ services:
       - traefik.http.routers.web-evinesyalar.entrypoints=websecure
       - traefik.http.routers.web-evinesyalar.tls.certResolver=letsencrypt
       - traefik.http.services.web-evinesyalar.loadbalancer.server.port=8091
-
 
 networks:
   dokploy-network:
