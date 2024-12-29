@@ -5,8 +5,6 @@ services:
     user: root
     ports:
       - 8091
-    volumes:
-      - ./evi:/usr/share/nginx/html
     networks:
       - dokploy-network
     labels:
