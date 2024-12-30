@@ -5,7 +5,7 @@ services:
     build: .
     user: root
     ports:
-      - 8081
+      - "8081:80" # 将容器的 80 端口映射到主机的 8081 端口
 #    networks:
 #      - dokploy-network
 #    labels:

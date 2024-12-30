@@ -20,6 +20,5 @@ FROM nginx:alpine
 
 # 只复制构建结果
 COPY --from=builder /app/_site /usr/share/nginx/html
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 CMD ["nginx", "-g", "daemon off;"]
