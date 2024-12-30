@@ -6,14 +6,14 @@ services:
     user: root
     ports:
       - "8081:80" # 将容器的 80 端口映射到主机的 8081 端口
-#    networks:
-#      - dokploy-network
-#    labels:
-#      - traefik.enable=true
-#      - traefik.http.routers.app-evi.rule=Host(`evinesyalar.neyhub.com`)
-#      - traefik.http.routers.app-evi.entrypoints=websecure
-#      - traefik.http.routers.app-evi.tls.certResolver=letsencrypt
-#      - traefik.http.services.app-evi.loadbalancer.server.port=8080
-#networks:
-#  dokploy-network:
-#    external: true
+    networks:
+      - dokploy-network
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.app-evi.rule=Host(`evinesyalar.neyhub.com`)
+      - traefik.http.routers.app-evi.entrypoints=websecure
+      - traefik.http.routers.app-evi.tls.certResolver=letsencrypt
+      - traefik.http.services.app-evi.loadbalancer.server.port=8080
+networks:
+  dokploy-network:
+    external: true
